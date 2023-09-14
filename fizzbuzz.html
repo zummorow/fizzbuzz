@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan Manipulasi DOM</title>
+</head>
+<style>
+    #hasilFizzBuzz.invalid {
+        color: red;
+    }
+</style>
+<body>
+    <h1>Get a FizzBuzz Result!</h1>
+    <label for="inputText">Type a Number : </label>
+    <input type="text" id="inputText">
+    <button onclick="cek()">Click Here!</button>
+    <hr>
+    <p id="hasilFizzBuzz"></p>
+    <script>
+        
+        function cek() {
+            var inputText = document.getElementById("inputText").value;
+            var hasilFizzBuzzElem = document.getElementById("hasilFizzBuzz");
+            if (!isNaN(inputText)) {
+                var inputNumber = parseInt(inputText);
+                if (inputNumber === 0){
+                    hasilFizzBuzzElem.className = "invalid";
+                    hasilFizzBuzzElem.innerHTML = "Infalid Input";
+                }
+                else if (inputNumber % 3 === 0 && inputNumber % 5 === 0) {
+                    hasilFizzBuzzElem.innerHTML = "FizzBuzz";
+                }
+                else if (inputNumber % 3 === 0) {
+                    hasilFizzBuzzElem.innerHTML = "Fizz";
+                }
+                else if (inputNumber % 5 === 0) {
+                    hasilFizzBuzzElem.innerHTML = "Buzz";
+                }
+                else {
+                    hasilFizzBuzzElem.innerHTML = inputNumber.toString();
+                }
+            }
+            
+            else {
+                hasilFizzBuzzElem.className = "invalid";
+                hasilFizzBuzzElem.innerHTML = "Invalid Input";
+            }
+        }
+    </script>
+</body>
+</html>
