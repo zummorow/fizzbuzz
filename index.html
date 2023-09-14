@@ -9,6 +9,9 @@
     #hasilFizzBuzz.invalid {
         color: red;
     }
+    #hasilFizzBuzz.valid{
+        color: black;
+    }
 </style>
 <body>
     <h1>Get a FizzBuzz Result!</h1>
@@ -30,15 +33,19 @@
                 }
                 else if (inputNumber % 3 === 0 && inputNumber % 5 === 0) {
                     hasilFizzBuzzElem.innerHTML = "FizzBuzz";
+                    hasilFizzBuzzElem.className = "valid";
                 }
                 else if (inputNumber % 3 === 0) {
                     hasilFizzBuzzElem.innerHTML = "Fizz";
+                    hasilFizzBuzzElem.className = "valid";
                 }
                 else if (inputNumber % 5 === 0) {
                     hasilFizzBuzzElem.innerHTML = "Buzz";
+                    hasilFizzBuzzElem.className = "valid";
                 }
                 else {
                     hasilFizzBuzzElem.innerHTML = inputNumber.toString();
+                    hasilFizzBuzzElem.className = "valid";
                 }
             }
             
